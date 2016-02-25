@@ -1,0 +1,35 @@
+// fonts
+
+@font-face {
+    font-family: 'odudo-soft-bold';
+    src: url('webfonts/odudo-soft-bold.eot');
+    src: url('webfonts/odudo-soft-bold.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/odudo-soft-bold.woff2') format('woff2'),
+         url('webfonts/odudo-soft-bold.woff') format('woff'),
+         url('webfonts/odudo-soft-bold.ttf') format('truetype'),
+         url('webfonts/odudo-soft-bold.svg#odudosoftbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$bold
+
+@font-face {
+    font-family: 'odudo-soft';
+    src: url('webfonts/odudo-soft.eot');
+    src: url('webfonts/odudo-soft.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/odudo-soft.woff2') format('woff2'),
+         url('webfonts/odudo-soft.woff') format('woff'),
+         url('webfonts/odudo-soft.ttf') format('truetype'),
+         url('webfonts/odudo-soft.svg#odudosoft') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$text
+
+// global
+
+body {
+	font-family: 'odudo-soft-bold';
+}

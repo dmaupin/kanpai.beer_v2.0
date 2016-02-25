@@ -1,0 +1,27 @@
+/*
+Font: 		Odudo Soft
+Style: 		Regular
+URL: 		https://www.youworkforthem.com/font/T6164/odudo-soft
+Foundry: 	Thom Niessink
+Foundry: 	https://www.youworkforthem.com/designer/521/thom-niessink
+Copyright:	Copyright (c) 2015 by thmbnl. graphic design. All rights reserved
+Version: 	17
+Created:	December 07, 2015
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+	font-family: 'OdudoSoft-Regular';
+	src: url('odudo-soft.eot');
+	src: url('odudo-soft.eot?#iefix') format('embedded-opentype'),
+             url('odudo-soft.woff2') format('woff2'),
+	     url('odudo-soft.woff') format('woff'),
+	     url('odudo-soft.ttf') format('truetype'),
+	     url('odudo-soft.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
