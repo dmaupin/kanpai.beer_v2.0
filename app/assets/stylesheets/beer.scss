@@ -103,6 +103,8 @@ p {
 	background: white;
 }
 
+// hero image section
+
 .hero {
 	background-color: $grey;
 	// background: url(man.png);
@@ -136,6 +138,8 @@ p {
 		font-family: $text;
 	}
 }
+
+// site description and sign-up call to action
 
 .about {
 	background: url(about.png);
@@ -183,28 +187,44 @@ p {
 	}
 }
 
+// how to kanpai section styles
+
+$breakone: new-breakpoint(max-width 1219px);
+
 .how {
 	background-color: $greytwo;
 	height: 50vh;
 	margin: none;
-	padding-top: 6em;
+	padding-top: 4em;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: relative;
-	
-	.how-text {
-		opacity: 0;
-		transition: opacity .5s ease;
+	// position: relative;
 
-		@include media(1220px) {
-			opacity: 1;
-			transition: opacity .5s ease;
+	.how-inner {
+		position: relative;
+	}
+	
+	.how-text-a {
+		transition: transform .5s ease;
+
+		@include media($breakone) {
+			transform: translateY(-100px);
+			transition: transform .5s ease;
 		}
 	}
 
-	// arrow
+	.how-text-b {
+		transition: transform .5s ease;
+
+		@include media($breakone) {
+			transform: translateY(100px);
+			transition: transform .5s ease;
+		}
+	}
+
+	// arrows
 
 	.arrows {
 		display: flex;
@@ -266,9 +286,11 @@ p {
 		position: static;
 	}
 
-	h1 {
-		margin: 0;
+	h2 {
+		margin-top: 0px;
 	}
+
+	// beer mug images
 
 	.mugs {
 		
@@ -277,13 +299,21 @@ p {
 	img {
 		width: 20em;
 		position: absolute;
-		right: 7.5%;
+		right: -50%;
 		margin-top: -95px;
 	}
 
 	img:nth-child(2) {
 		position: absolute;
-		left: 7.5%;
+		left: -50%;
 		transform: scaleX(-1);
 	}
+}
+
+// footer
+
+.footer {
+	height: 15vh;
+	width: 100%;
+	background-color: $accent;
 }
