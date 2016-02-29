@@ -12,7 +12,7 @@
     font-style: normal;
 }
 
-$bold
+$bold: 'odudo-soft-bold';
 
 @font-face {
     font-family: 'odudo-soft';
@@ -26,10 +26,264 @@ $bold
     font-style: normal;
 }
 
-$text
+$text: 'odudo-soft';
+
+// Color variables
+
+$accent: #35e8b1;
+$grey: #d0d2d2;
+$ltgrey: #e0e0e0;
+$greytwo: #f3f3f1;
 
 // global
 
 body {
+	font-size: 100%;
 	font-family: 'odudo-soft-bold';
+	background-color: $ltgrey;
+	transition: .25s ease;
+}
+
+button {
+	appearance: none;
+	border: none;
+	background-color: black;
+	color: white;
+	padding: .5em;
+	border-radius: 4px;
+}
+
+h1 {
+	letter-spacing: -1px;
+}
+
+h2 {
+	letter-spacing: -1px;
+}
+
+p {
+	font-family: $text;
+}
+
+// nav
+
+.nav {
+	background-color: $accent;
+	height: 3.25em;
+	margin-top: -3.25em;
+	width: 100%;
+	padding: 1em;
+	text-align: left;
+	position: fixed;
+
+	a {
+		text-decoration: none;
+		text-transform: none;
+		color: black;
+	}
+
+	a:hover {
+		text-transform: none;
+		color: black;
+	}
+
+}
+
+ a:after {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 0;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease; 
+}
+
+ a:hover:after {
+	width: 2.4em;
+	background: white;
+}
+
+.hero {
+	background-color: $grey;
+	// background: url(man.png);
+	// background-size: cover;
+	height: 50vh;
+	margin: none;
+	margin-top: 3.25em;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 12em;
+	}
+
+	h1 {
+		font-size: 3em;
+    line-height: 1;
+	}
+
+	h2 {
+		background-color: white;
+		padding: .5em;
+		max-width: 13em;
+    margin: auto;
+    border-radius: 4px;
+	}
+
+	span {
+		font-family: $text;
+	}
+}
+
+.about {
+	background: url(about.png);
+	background-size: cover;
+	background-blend-mode: screen;
+	background-color: $accent;
+	height: 50vh;
+	margin: none;
+	padding: 5em;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+
+	h1 {
+		color: $accent;
+		font-size: 3em;
+		background-color: black;
+		padding: .25em;
+		padding-top: .15em;
+    padding-left: 0.45em;
+    max-width: 11.5em;		
+		border-radius: 4px;
+	}
+
+	h2 {
+		font-family: $text;
+	}
+
+	span {
+		font-family: $bold;
+	}
+
+	a {
+		text-decoration: none;
+		text-transform: none;
+		font-size: 1.3em;	
+		color: white;
+		transition: color .5s ease;
+	}
+
+	a:hover {
+		color: $accent;
+		transition: color .5s ease;
+	}
+}
+
+.how {
+	background-color: $greytwo;
+	height: 50vh;
+	margin: none;
+	padding-top: 6em;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	
+	.how-text {
+		opacity: 0;
+		transition: opacity .5s ease;
+
+		@include media(1220px) {
+			opacity: 1;
+			transition: opacity .5s ease;
+		}
+	}
+
+	// arrow
+
+	.arrows {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.arrow { 
+    width: 100%;
+    margin-top: 39px;
+	}
+
+	.arrow-left { 
+    transform: rotate(180deg);
+    width: 100%;
+	}
+
+	.line {
+		width: 90%;
+		height: 10px !important;
+		border-radius: 6px;
+		background-color: black;
+	}
+
+	.line:nth-child(2) {
+		width: 30px;
+		transform: rotate(45deg) translateY(0px) translateX(-4px);
+	}
+
+	.line:nth-child(3) {
+		width: 30px;
+		transform: rotate(-45deg) translateY(-22px) translateX(17px);
+	}
+
+	.line:nth-child(4) {
+		width: 30px;
+		float: right;
+		transform: rotate(-45deg) translateY(-14px) translateX(18px);
+	}
+
+	.line:nth-child(5) {
+		width: 30px;
+		float: right;
+		transform: rotate(45deg) translateY(-50px) translateX(-4px);
+	}
+
+	// end of arrow
+
+	h1 {
+		font-size: 3em;
+    line-height: 1;
+    margin: 0;
+	}
+
+	h1 span {
+		color: $accent;
+		font-size: 3em;
+		position: static;
+	}
+
+	h1 {
+		margin: 0;
+	}
+
+	.mugs {
+		
+	}
+
+	img {
+		width: 20em;
+		position: absolute;
+		right: 7.5%;
+		margin-top: -95px;
+	}
+
+	img:nth-child(2) {
+		position: absolute;
+		left: 7.5%;
+		transform: scaleX(-1);
+	}
 }
