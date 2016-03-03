@@ -3,11 +3,12 @@ class BeersController < ApplicationController
   # before_action :authorize
 
     def index
-      if current_user
+      @beers = Beer.all.order(created_at: :desc)
+      # if current_user
         # @beers = current_user.beers.all
-        @beers = current_user.beers.all.order(created_at: :desc)
+        # @beers = current_user.beers.all.order(created_at: :desc)
         # @beers = current_user.beers.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 6)
-      end
+      # end
     end
 
     def new

@@ -1,1 +1,52 @@
-<%= render partial: 'beers/landing' %>
+<%= render partial: 'beers/landing'%>
+
+<!-- Nav -->
+
+<div class="nav">
+	<% if user_signed_in? %>
+	Logged in as <strong><%= current_user.email %></strong>.
+		<%= link_to 'Edit profile', edit_user_registration_path %> |
+		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	<% else %>
+		<%= link_to "login", new_user_session_path %>
+	<% end %>
+</div>
+
+<!-- content goes here -->
+
+<div class="wishlist">
+<h1>wish list</h1>
+	<div class="wishlist-inner">
+		<div class="wishlist-table">
+			<div class="wishlist-titles">
+					<h3>beer</h3>
+					<h3>brewery</h3>
+					<h3>style</h3>
+			</div>
+			<% @beers.each do |b| %>
+				<div class="wishlist-item">
+					<h2><%= b.name %></h2>
+					<h2><%= b.brewery %></h2>
+					<h2><%= b.style %></h2>
+					<button>×</button>
+					<button>r</button>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- reviews -->
+
+<div class="collection">
+	<h1>collection</h1>
+	<div class="collection-inner">
+		<% @beers.each do |b| %>
+		<div class="cover">
+			<h2><%= b.name %></h2>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<div class="footer"></div>

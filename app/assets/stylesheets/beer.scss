@@ -38,6 +38,9 @@ $greytwo: #f3f3f1;
 // global
 
 body {
+	max-width: 1600px;
+	margin-left: auto;
+	margin-right: auto;
 	font-size: 100%;
 	font-family: 'odudo-soft-bold';
 	background-color: $ltgrey;
@@ -75,6 +78,7 @@ p {
 	padding: 1em;
 	text-align: left;
 	position: fixed;
+	z-index: 101;
 
 	a {
 		text-decoration: none;
@@ -89,7 +93,7 @@ p {
 
 }
 
- a:after {
+a:after {
 	content: "";
 	display: block;
 	height: 3px;
@@ -102,6 +106,8 @@ p {
 	width: 2.4em;
 	background: white;
 }
+
+// Landing Page Styles start
 
 // hero image section
 
@@ -356,6 +362,114 @@ $breaktwo: new-breakpoint(max-width 999px);
 			transition: opacity .5s ease;
 		}		
 	}
+}
+
+// Landing page styles end
+
+// Main / Index styles start here
+
+.wishlist {
+	background-color: $grey;
+	height: 50vh;
+	margin: none;
+	margin-top: 3.25em;
+	text-align: left;
+	padding: 3em;
+
+	h1 {
+		font-size: 3em;
+	}
+}
+
+.wishlist-inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+
+	.wishlist-table {
+		
+		@include span-columns(12);
+
+		.wishlist-titles {
+			@include span-columns(12);
+			display: inline-block;
+
+			h3 {
+				@include span-columns(3.5);
+				font-family: $text;
+			}
+
+		}
+
+		.wishlist-item {
+
+			background-color: $greytwo;
+			@include span-columns(12);
+			margin: 0;
+			padding: 0.25em;
+			padding-bottom: 0.125em; 
+
+			h2 {
+				@include span-columns(3.5);
+				font-size: 1.1em;
+				background-color: $accent;
+				padding: 0.75em;
+				margin: 0;
+				margin-right: 0.25em;
+			}
+
+			button {
+				@include span-columns(.75);
+				font-size: 1.25em;
+				color: $accent;
+				padding: 0.6em;
+				margin-right: 0.25em;
+				margin-left: 0.25em;
+				float: right;
+			}
+
+		}
+
+		.wishlist-item:nth-last-child(1) {
+			padding-bottom: 0.25em;
+		}
+
+	}
+
+}
+
+// reviews
+
+.collection {
+	min-height: 75vh;
+	background-color: $grey;
+	margin: none;
+	text-align: left;
+	padding: 3em;
+
+	h1 {
+		font-size: 3em;
+	}
+}
+
+.collection-inner {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	flex-wrap: wrap;
+}
+
+.cover {
+	min-width: 22.125em;
+	height: 22.125em;
+	margin-right: 2.5em;
+	margin-bottom: 2.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: $accent;
 }
 
 // footer
