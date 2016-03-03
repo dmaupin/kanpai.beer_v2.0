@@ -30,11 +30,13 @@ class BeersController < ApplicationController
     end
 
     def edit
-      @beer = current_user.beers.find(params[:id])    
+      # @beer = current_user.beers.find(params[:id]) 
+      @beer = Beer.find(params[:id])   
     end
 
     def update
-      @beer = current_user.beers.find(params[:id])
+      # @beer = current_user.beers.find(params[:id])
+      @beer = Beer.find(params[:id])
       if @beer.update(beer_params)
       redirect_to beers_path
       else
@@ -49,7 +51,7 @@ class BeersController < ApplicationController
     end
 
     def beer_params
-      params.require(:beer).permit(:name, :brewery, :style, :ABV, :price, :rating, :taste, :appearance, :photo, :color)
+      params.require(:beer).permit(:name, :brewery, :style, :alc, :price, :rating, :img, :color)
     end
 
 end

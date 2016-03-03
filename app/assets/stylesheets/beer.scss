@@ -68,6 +68,10 @@ p {
 	font-family: $text;
 }
 
+*::selection {
+  background-color: $accent;
+}
+
 // nav
 
 .nav {

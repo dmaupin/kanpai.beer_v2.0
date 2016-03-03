@@ -7,13 +7,11 @@
 				Style:<br/>
 				<%= f.text_field :style, placeholder: "Style", size: "25px" %><br/>
 				ABV:<br/> 
-				<%= f.number_field :ABV, placeholder: "ABV", size: "25px" %><br/>
+				<%= f.number_field :alc, placeholder: "ABV", size: "25px" %><br/>
 				Rating:<br/> 
 				<%= f.number_field :rating, placeholder: "(1-10)", size: "25px" %><br/>
 				Price:<br/> 
 				<%= f.number_field :price, placeholder: "Price", size: "25px" %><br/>
-				Taste:<br/> 
-				<%= f.text_field :taste, list: "tastes", placeholder: "flavor", size: "25px" %><br/>
 				<datalist id=tastes>
 						<option>Dry</option>
 						<option>Hoppy</option>
@@ -24,7 +22,7 @@
 				<br/>Color:
 				<%= f.color_field :color, list: "colors", placeholder: "#ffeaa5" %><br/>
 				<br/>Label Photo:<br/>  
-				<%= f.file_field :photo %></div><br/>
+				<%= f.file_field :img %></div><br/>
 				<div><%= f.submit "Update", class: "l1"%></div>
 					<datalist id=colors>
 						<option>#ffeaa5</option>
