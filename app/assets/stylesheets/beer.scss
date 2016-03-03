@@ -72,6 +72,12 @@ p {
   background-color: $accent;
 }
 
+a {
+	text-decoration: none;
+	text-transform: none;
+	color: black;
+}
+
 // nav
 
 .nav {
@@ -94,21 +100,21 @@ p {
 		text-transform: none;
 		color: black;
 	}
+	
+	a:after {
+		content: "";
+		display: block;
+		height: 3px;
+		width: 0;
+		background: transparent;
+		transition: width .5s ease, background-color .5s ease; 
+	}
 
-}
+	 a:hover:after {
+		width: 2.4em;
+		background: white;
+	}
 
-a:after {
-	content: "";
-	display: block;
-	height: 3px;
-	width: 0;
-	background: transparent;
-	transition: width .5s ease, background-color .5s ease; 
-}
-
- a:hover:after {
-	width: 2.4em;
-	background: white;
 }
 
 // Landing Page Styles start
@@ -462,18 +468,31 @@ $breaktwo: new-breakpoint(max-width 999px);
 	align-items: center;
 	justify-content: left;
 	flex-wrap: wrap;
+
+	h2 {
+		background-color: $accent;
+		padding: .5em;
+		border-radius: 4px;
+	}
 }
 
 .cover {
-	min-width: 22.125em;
-	height: 22.125em;
-	margin-right: 2.5em;
-	margin-bottom: 2.5em;
+	min-width: 23.9375em;
+	height: 23.9375em;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	background-size: cover;
+	// filter: grayscale(1);
+	// -webkit-filter: grayscale(1);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	background-color: $accent;
+}
+
+.cover:nth-child(3n) {
+	margin-right: 0;
 }
 
 // footer

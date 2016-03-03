@@ -42,8 +42,8 @@
 	<h1>collection</h1>
 	<div class="collection-inner">
 		<% @beers.each do |b| %>
-		<div class="cover">
-			<h2><%= b.name %></h2>
+		<div class="cover" style="background-image: url(<%= b.img %>);">
+			<h2><%= link_to b.name, beer_path(b) %></h2>
 		</div>
 		<% end %>
 	</div>

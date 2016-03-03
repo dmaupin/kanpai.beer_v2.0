@@ -26,7 +26,8 @@ class BeersController < ApplicationController
     end
 
     def show
-      @beer = current_user.beers.find(params[:id])
+      # @beer = current_user.beers.find(params[:id])
+      @beer = Beer.find(params[:id])
     end
 
     def edit
