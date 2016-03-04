@@ -57,11 +57,11 @@ button {
 }
 
 h1 {
-	letter-spacing: -1px;
+	letter-spacing: -0.5px;
 }
 
 h2 {
-	letter-spacing: -1px;
+	letter-spacing: 1px;
 }
 
 p {
@@ -176,8 +176,8 @@ a {
 		background-color: black;
 		padding: .25em;
 		padding-top: .15em;
-    padding-left: 0.45em;
-    max-width: 11.5em;		
+    	padding-left: 0.45em;
+    	max-width: 11.9em;		
 		border-radius: 4px;
 	}
 
@@ -427,6 +427,8 @@ $breaktwo: new-breakpoint(max-width 999px);
 				padding: 0.75em;
 				margin: 0;
 				margin-right: 0.25em;
+				letter-spacing: 0.5px;
+    			text-transform: lowercase;
 			}
 
 			button {
@@ -476,23 +478,108 @@ $breaktwo: new-breakpoint(max-width 999px);
 	}
 }
 
+$coverbreak: new-breakpoint(max-width 1275px);
+
 .cover {
-	min-width: 23.9375em;
-	height: 23.9375em;
-	margin-right: 1em;
-	margin-bottom: 1em;
-	background-size: cover;
-	// filter: grayscale(1);
-	// -webkit-filter: grayscale(1);
+	width: 32.26%;
+	margin: 1% 0 1% 1.6%;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	background-color: $accent;
+	background-size: cover;
+	background-position: center;
+	transition: width .3s ease;
+
+	a {
+		color: black;
+		text-transform: lowercase;
+    	letter-spacing: 1px;
+	}
+
+	@include media($coverbreak){
+		width: 49.2%;
+		height: 0;
+		height: 49.2%;
+	}
+}
+
+.cover:after {
+	content: "";
+	padding-bottom: 100%;
+}
+
+.cover:first-child {
+	margin-left: 0;
+}
+
+.cover:nth-child(2n) {
+	margin: 1% 0 1% 1.6%;
+	@include media($coverbreak) {
+		margin-right: 0;
+	}
 }
 
 .cover:nth-child(3n) {
 	margin-right: 0;
+
+	@include media($coverbreak){
+		margin: 1% 0 1% 0%;
+	}
+}
+
+// Show Page Styles
+
+.show-container {
+	width: 100%;
+	// height: 100vh;
+	padding: 3em;
+
+	h1 {
+		font-size: 3em;
+		text-transform: lowercase;
+	}
+}
+
+	a {
+		color: white;
+	}
+
+.show-buttons {
+	button {
+		margin-right: 0.25em;
+	}
+}
+
+.show-inner {
+
+	img {
+		width: 45%;
+		height: auto;
+		float: right;
+	}
+
+	.show-info {
+		width: 45%;
+		float: left;
+		text-align: left;
+		background-color: $ltgrey;
+	
+		h2 {
+			// padding: 1em;
+		}
+
+		span {
+			font-family: $text;
+		}
+
+		.color-bar {
+			width: 45%;
+			height: 2em;
+		}
+	}
 }
 
 // footer

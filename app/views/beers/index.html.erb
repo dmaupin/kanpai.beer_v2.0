@@ -43,7 +43,10 @@
 	<div class="collection-inner">
 		<% @beers.each do |b| %>
 		<div class="cover" style="background-image: url(<%= b.img %>);">
+			<div>
 			<h2><%= link_to b.name, beer_path(b) %></h2>
+			</div>
+			<!-- <img src="<%= b.img.url %>" class="cover-background">  *to use filter would have to put image in seperate div -->
 		</div>
 		<% end %>
 	</div>

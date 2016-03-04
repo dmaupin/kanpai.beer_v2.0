@@ -5,7 +5,6 @@ class BeersController < ApplicationController
     def index
       @beers = Beer.all.order(created_at: :desc)
       # if current_user
-        # @beers = current_user.beers.all
         # @beers = current_user.beers.all.order(created_at: :desc)
         # @beers = current_user.beers.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 6)
       # end
@@ -16,7 +15,8 @@ class BeersController < ApplicationController
     end
 
     def create
-      @beer = current_user.beers.new(beer_params)
+      # @beer = current_user.beers.new(beer_params)
+      @beer = Beer.new(beer_params)
       if @beer.save
         redirect_to beers_path
       else
@@ -46,7 +46,8 @@ class BeersController < ApplicationController
     end
 
     def destroy
-      @beer = current_user.beers.find(params[:id])
+      # @beer = current_user.beers.find(params[:id])
+      @beer = Beer.find(params[:id])
       @beer.destroy
       redirect_to beers_path
     end
