@@ -1,0 +1,13 @@
+<%= form_for @beer do |f| %>
+  <div>
+    Name: <%= f.text_field :name %>
+    Brewery: <%= f.text_field :brewery %>
+    Style: <%= f.text_field :style %>
+		<span><%= f.submit "+" %></span>
+  </div>
+  <% end %><br/>
+  <% flash.each do |key, value| %>
+  	<br/><span><div class='alert-<%= key %>' role='danger'>
+    	<%= value %>
+  	</div></span>
+	<% end %>

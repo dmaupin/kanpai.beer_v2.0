@@ -3,11 +3,11 @@ class BeersController < ApplicationController
   # before_action :authorize
 
     def index
-      if current_user
-        # @beers = current_user.beers.all
-        @beers = current_user.beers.all.order(created_at: :desc)
+      @beers = Beer.all.order(created_at: :desc)
+      # if current_user
+        # @beers = current_user.beers.all.order(created_at: :desc)
         # @beers = current_user.beers.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 6)
-      end
+      # end
     end
 
     def new
@@ -15,7 +15,8 @@ class BeersController < ApplicationController
     end
 
     def create
-      @beer = current_user.beers.new(beer_params)
+      # @beer = current_user.beers.new(beer_params)
+      @beer = Beer.new(beer_params)
       if @beer.save
         redirect_to beers_path
       else
@@ -25,15 +26,18 @@ class BeersController < ApplicationController
     end
 
     def show
-      @beer = current_user.beers.find(params[:id])
+      # @beer = current_user.beers.find(params[:id])
+      @beer = Beer.find(params[:id])
     end
 
     def edit
-      @beer = current_user.beers.find(params[:id])    
+      # @beer = current_user.beers.find(params[:id]) 
+      @beer = Beer.find(params[:id])   
     end
 
     def update
-      @beer = current_user.beers.find(params[:id])
+      # @beer = current_user.beers.find(params[:id])
+      @beer = Beer.find(params[:id])
       if @beer.update(beer_params)
       redirect_to beers_path
       else
@@ -42,13 +46,14 @@ class BeersController < ApplicationController
     end
 
     def destroy
-      @beer = current_user.beers.find(params[:id])
+      # @beer = current_user.beers.find(params[:id])
+      @beer = Beer.find(params[:id])
       @beer.destroy
       redirect_to beers_path
     end
 
     def beer_params
-      params.require(:beer).permit(:name, :brewery, :style, :ABV, :price, :rating, :taste, :appearance, :photo, :color)
+      params.require(:beer).permit(:name, :brewery, :style, :alc, :price, :rating, :img, :color)
     end
 
 end

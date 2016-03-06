@@ -1,0 +1,19 @@
+
+<div class="show-container">
+	<h1><%= @beer.name.upcase %></h1>
+	<div class="show-inner">
+		<div  class="show-info">
+			<h2><span>brewery:</span> <%= @beer.brewery  %></h2>
+			<h2><span>style:</span> <%= @beer.style %></h2>
+			<h2><span>abv% :</span> <%= @beer.alc %></h2>
+			<h2><span>rating:</span> <%= @beer.rating %> out of 10</h2>
+			<h2><span>price:</span> $<%= @beer.price %></h2>
+			<h2><span>color:</span></h2>
+			<div class="color-bar" style="color:<%= @beer.color %>"></div>
+				<div class="show-buttons">
+		<button><%= link_to 'REVISE', edit_beer_path(@beer) %></button><button><%= link_to "X", @beer, method: :delete, data: { confirm: "Are you sure?"} %></button><button><%= link_to "BACK", beers_path %></button>
+	</div>
+		</div>
+			<%= image_tag @beer.img.url %>
+	</div>
+</div>
