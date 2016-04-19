@@ -56,6 +56,10 @@ button {
 	border-radius: 4px;
 }
 
+h1, h2, h3, p, button {
+	text-rendering: optimizeLegibility;
+}
+
 h1 {
 	letter-spacing: -0.5px;
 }
